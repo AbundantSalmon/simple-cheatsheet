@@ -10,14 +10,21 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:vscode-cheatsheet.helloWorld"
+    "onCommand:vscode-cheatsheet.showCheatSheet",
+    "onCommand:vscode-cheatsheet.closeCheatSheet"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "vscode-cheatsheet.helloWorld",
-        "title": "Hello World"
+        "command": "vscode-cheatsheet.showCheatSheet",
+        "title": "show",
+        "category": "Cheat sheet"
+      },
+      {
+        "command": "vscode-cheatsheet.closeCheatSheet",
+        "title": "close",
+        "category": "Cheat sheet"
       }
     ]
   },
