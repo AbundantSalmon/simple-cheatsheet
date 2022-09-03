@@ -1,26 +1,45 @@
 import * as vscode from "vscode";
+import * as path from "path";
+import * as fs from "fs";
 
 export function activate(context: vscode.ExtensionContext) {
   let currentPanel: vscode.WebviewPanel | undefined = undefined;
 
-  let showCheatSheetCommand = vscode.commands.registerCommand(
-    "vscode-cheatsheet.showCheatSheet",
-    () => {
-      const columnToShowIn = vscode.window.activeTextEditor
-        ? vscode.window.activeTextEditor.viewColumn
-        : undefined;
-      if (currentPanel) {
-        currentPanel.reveal(columnToShowIn);
-      } else {
-        currentPanel = vscode.window.createWebviewPanel(
-          "vscodeCheatSheet",
-          "VSCode Cheat Sheet",
-          vscode.ViewColumn.One,
-          {}
-        );
+  const showCheatSheet = () => {
+    const columnToShowIn = vscode.window.activeTextEditor
+      ? vscode.window.activeTextEditor.viewColumn
+      : undefined;
 
-        currentPanel.webview.html = getWebviewContent();
+    if (currentPanel) {
+      currentPanel.reveal(columnToShowIn);
+    } else {
+      currentPanel = vscode.window.createWebviewPanel(
+        "vscodeCheatSheet",
+        "VSCode Cheat Sheet",
+        vscode.ViewColumn.One,
+        {
+          localResourceRoots: [
+            vscode.Uri.file(path.join(context.extensionPath, "media")),
+          ],
+        }
+      );
+
+      let cheatSheetFilePath =
+        vscode.workspace.getConfiguration("vscode-cheatsheet").cheatSheetFile;
+
+      if (!cheatSheetFilePath) {
+        cheatSheetFilePath = path.join(context.extensionPath, "test.html");
       }
+
+      if (!fs.existsSync(cheatSheetFilePath)) {
+        vscode.window.showErrorMessage(
+          "Cheat sheet file not found. Please set in settings."
+        );
+        return;
+      }
+
+      const htmlToDisplay = fs.readFileSync(cheatSheetFilePath, "utf8");
+      currentPanel.webview.html = htmlToDisplay;
 
       currentPanel.onDidDispose(
         () => {
@@ -30,32 +49,40 @@ export function activate(context: vscode.ExtensionContext) {
         context.subscriptions
       );
     }
+  };
+
+  const showCheatSheetCommand = vscode.commands.registerCommand(
+    "vscode-cheatsheet.showCheatSheet",
+    showCheatSheet
   );
 
-  let closeCheatSheetCommand = vscode.commands.registerCommand(
+  const closeCheatSheet = () => {
+    if (currentPanel) {
+      currentPanel.dispose();
+    }
+  };
+
+  const closeCheatSheetCommand = vscode.commands.registerCommand(
     "vscode-cheatsheet.closeCheatSheet",
+    closeCheatSheet
+  );
+
+  const toggleCheatSheetCommand = vscode.commands.registerCommand(
+    "vscode-cheatsheet.toggleCheatSheet",
     () => {
       if (currentPanel) {
-        currentPanel.dispose();
+        closeCheatSheet();
+      } else {
+        showCheatSheet();
       }
     }
   );
 
-  context.subscriptions.push(showCheatSheetCommand, closeCheatSheetCommand);
-}
-
-function getWebviewContent() {
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat Coding</title>
-</head>
-<body>
-    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
-</body>
-</html>`;
+  context.subscriptions.push(
+    showCheatSheetCommand,
+    closeCheatSheetCommand,
+    toggleCheatSheetCommand
+  );
 }
 
 export function deactivate() {

@@ -11,7 +11,8 @@
   ],
   "activationEvents": [
     "onCommand:vscode-cheatsheet.showCheatSheet",
-    "onCommand:vscode-cheatsheet.closeCheatSheet"
+    "onCommand:vscode-cheatsheet.closeCheatSheet",
+    "onCommand:vscode-cheatsheet.toggleCheatSheet"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -25,6 +26,31 @@
         "command": "vscode-cheatsheet.closeCheatSheet",
         "title": "close",
         "category": "Cheat sheet"
+      },
+      {
+        "command": "vscode-cheatsheet.toggleCheatSheet",
+        "title": "toggle",
+        "category": "Cheat sheet"
+      }
+    ],
+    "configuration": {
+      "title": "vscode-cheatsheet",
+      "properties": {
+        "vscode-cheatsheet.cheatSheetFile": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null,
+          "description": "Filepath to the cheat sheet html file"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "vscode-cheatsheet.toggleCheatSheet",
+        "key": "ctrl+f1",
+        "mac": "cmd+f1"
       }
     ]
   },
