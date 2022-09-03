@@ -1,6 +1,6 @@
 # vscode-cheatsheet README
 
-This is the README for your extension "vscode-cheatsheet". After writing up a brief description, we recommend including the following sections.
+Edit this just so I can package this.
 
 ## Features
 
@@ -48,6 +48,7 @@ Fixed issue #.
 Added features X, Y, and Z.
 
 -----------------------------------------------------------------------------------------------------------
+
 ## Following extension guidelines
 
 Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
