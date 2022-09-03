@@ -4,8 +4,11 @@ import * as fs from "fs";
 
 export function activate(context: vscode.ExtensionContext) {
   let currentPanel: vscode.WebviewPanel | undefined = undefined;
+  let lastDocument: vscode.TextDocument | undefined = undefined;
 
   const showCheatSheet = () => {
+    lastDocument = vscode.window.activeTextEditor?.document;
+
     const columnToShowIn = vscode.window.activeTextEditor
       ? vscode.window.activeTextEditor.viewColumn
       : undefined;
@@ -59,6 +62,9 @@ export function activate(context: vscode.ExtensionContext) {
   const closeCheatSheet = () => {
     if (currentPanel) {
       currentPanel.dispose();
+      if (lastDocument) {
+        vscode.window.showTextDocument(lastDocument);
+      }
     }
   };
 
