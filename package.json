@@ -1,7 +1,24 @@
 {
   "name": "vscode-cheatsheet",
   "displayName": "vscode-cheatsheet",
-  "description": "",
+  "description": "Basic toggling display of a user defined html cheatsheet.",
+  "publisher": "AbundantSalmon",
+  "author": {
+    "name": "David Hang",
+    "url": "https://davidhang.com"
+  },
+  "icon": "images/icon.png",
+  "keywords": [
+    "cheatsheet",
+    "html",
+    "toggle",
+    "shortcut"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AbundantSalmon/vscode-cheatsheet"
+  },
+  "license": "MIT",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.71.0"
