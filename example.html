@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cheat Sheet</title>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css"
+    />
+    <style>
+      body {
+        font-family: Hack, monospace;
+        padding-left: 10%;
+        padding-right: 10%;
+      }
+      h1 {
+        text-align: center;
+      }
+      th {
+        text-align: left;
+        border-bottom: 1px solid;
+      }
+      table {
+        border-collapse: separate;
+        border-spacing: 40px 0px;
+      }
+      .table-container {
+        display: flex;
+        flex-direction: column;
+      }
+      .command-description {
+        color: #b58900;
+      }
+      .command {
+        font-weight: bold;
+        color: #6c71c4;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Example Cheat Sheet</h1>
+    <p>
+      Replace with your own by pointing the extension setting to you own html
+      page.
+    </p>
+    <div class="table-container">
+      <h2>VSCode</h2>
+      <table aria-describedby="VScode shortcuts">
+        <tr>
+          <th>Description</th>
+          <th>Shortcut</th>
+        </tr>
+        <tr>
+          <td class="command-description">
+            Toggle inline typing on typescript
+          </td>
+          <td class="command">Control + i</td>
+        </tr>
+        <tr>
+          <td class="command-description">Show function arguments</td>
+          <td class="command">Control + Shift + Space</td>
+        </tr>
+        <tr>
+          <td class="command-description">Go to definition</td>
+          <td class="command">F12</td>
+        </tr>
+        <tr>
+          <td class="command-description">Go to references</td>
+          <td class="command">Shift + F12</td>
+        </tr>
+        <tr>
+          <td class="command-description">Peek definition</td>
+          <td class="command">Option + F12</td>
+        </tr>
+        <tr>
+          <td class="command-description">Find Symbol</td>
+          <td class="command">Control + T</td>
+        </tr>
+        <tr>
+          <td class="command-description">Jump Back</td>
+          <td class="command">Command + _</td>
+        </tr>
+        <tr>
+          <td class="command-description">Jump Forward</td>
+          <td class="command">Command + Shift + _</td>
+        </tr>
+        <tr>
+          <td class="command-description">Add Multiple Cursors</td>
+          <td class="command">Control + Option + Up/Down</td>
+        </tr>
+        <tr>
+          <td class="command-description">Format</td>
+          <td class="command">Option + Shift + F</td>
+        </tr>
+        <tr>
+          <td class="command-description">Search Workspace</td>
+          <td class="command">Control + Shift + F</td>
+        </tr>
+        <tr>
+          <td class="command-description">Split window</td>
+          <td class="command">Control + |</td>
+        </tr>
+        <tr>
+          <td class="command-description">Close tab</td>
+          <td class="command">Control + w</td>
+        </tr>
+        <tr>
+          <td class="command-description">Open file explorer</td>
+          <td class="command">Control + Shift + e</td>
+        </tr>
+        <tr>
+          <td class="command-description">
+            Typescript React Arrow Function Export Component
+          </td>
+          <td class="command">tsrafce</td>
+        </tr>
+        <tr>
+          <td class="command-description">
+            Javascript Named Functional Component
+          </td>
+          <td class="command">nfn</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table-container">
+      <h2>Vim</h2>
+      <table aria-describedby="VIM shortcuts">
+        <tr>
+          <th>Description</th>
+          <th>Shortcut</th>
+        </tr>
+        <tr>
+          <td class="command-description">Change in tag block</td>
+          <td class="command">cit</td>
+        </tr>
+        <tr>
+          <td class="command-description">Toggle folding</td>
+          <td class="command">za</td>
+        </tr>
+        <tr>
+          <td class="command-description">
+            Insert mode at start and end of line respectively
+          </td>
+          <td class="command">I/A</td>
+        </tr>
+        <tr>
+          <td class="command-description">Paste below</td>
+          <td class="command">:pu</td>
+        </tr>
+        <tr>
+          <td class="command-description">Next occurrence</td>
+          <td class="command">*</td>
+        </tr>
+        <tr>
+          <td class="command-description">Previous occurrence</td>
+          <td class="command">#</td>
+        </tr>
+        <tr>
+          <td class="command-description">
+            Delete character below and go into insert mode
+          </td>
+          <td class="command">s</td>
+        </tr>
+        <tr>
+          <td class="command-description">Delete line and enter insert mode</td>
+          <td class="command">S</td>
+        </tr>
+        <tr>
+          <td class="command-description">Goto character in line</td>
+          <td class="command">f/F (; forward , backwards)</td>
+        </tr>
+        <tr>
+          <td class="command-description">Goto upto character in line</td>
+          <td class="command">t/T (; forward , backwards)</td>
+        </tr>
+        <tr>
+          <td class="command-description">
+            Find and replace inline/highlighted line
+          </td>
+          <td class="command">:s/(.*)/\1</td>
+        </tr>
+        <tr>
+          <td class="command-description">Find and replace whole file</td>
+          <td class="command">:%s/(.*)/\1</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

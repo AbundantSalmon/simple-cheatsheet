@@ -21,9 +21,6 @@ export function activate(context: vscode.ExtensionContext) {
         "VSCode Cheat Sheet",
         vscode.ViewColumn.One,
         {
-          localResourceRoots: [
-            vscode.Uri.file(path.join(context.extensionPath, "media")),
-          ],
         }
       );
 
@@ -31,7 +28,7 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.workspace.getConfiguration("vscode-cheatsheet").cheatSheetFile;
 
       if (!cheatSheetFilePath) {
-        cheatSheetFilePath = path.join(context.extensionPath, "test.html");
+        cheatSheetFilePath = path.join(context.extensionPath, "example.html");
       }
 
       if (!fs.existsSync(cheatSheetFilePath)) {
