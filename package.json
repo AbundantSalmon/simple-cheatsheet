@@ -20,17 +20,17 @@
       {
         "command": "vscode-cheatsheet.showCheatSheet",
         "title": "show",
-        "category": "Cheat sheet"
+        "category": "Cheat Sheet"
       },
       {
         "command": "vscode-cheatsheet.closeCheatSheet",
         "title": "close",
-        "category": "Cheat sheet"
+        "category": "Cheat Sheet"
       },
       {
         "command": "vscode-cheatsheet.toggleCheatSheet",
         "title": "toggle",
-        "category": "Cheat sheet"
+        "category": "Cheat Sheet"
       }
     ],
     "configuration": {
