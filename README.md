@@ -5,9 +5,7 @@
 Basic peaking function for a html cheat sheet. Default keybinding is `Ctrl+F1`
 for Windows/Linux and `Cmd+F1` for Mac to toggle showing the page.
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
+![Demo](images/demo.gif)
 
 ## Extension Settings
 
