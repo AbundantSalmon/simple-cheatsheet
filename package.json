@@ -1,6 +1,6 @@
 {
-  "name": "vscode-cheatsheet",
-  "displayName": "vscode-cheatsheet",
+  "name": "simple-cheatsheet",
+  "displayName": "simple-cheatsheet",
   "description": "Basic toggling display of a user defined html cheatsheet.",
   "publisher": "AbundantSalmon",
   "author": {
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/AbundantSalmon/vscode-cheatsheet"
+    "url": "https://github.com/AbundantSalmon/simple-cheatsheet"
   },
   "license": "MIT",
   "version": "0.0.1",
@@ -27,33 +27,33 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:vscode-cheatsheet.showCheatSheet",
-    "onCommand:vscode-cheatsheet.closeCheatSheet",
-    "onCommand:vscode-cheatsheet.toggleCheatSheet"
+    "onCommand:simple-cheatsheet.showCheatSheet",
+    "onCommand:simple-cheatsheet.closeCheatSheet",
+    "onCommand:simple-cheatsheet.toggleCheatSheet"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "vscode-cheatsheet.showCheatSheet",
+        "command": "simple-cheatsheet.showCheatSheet",
         "title": "show",
-        "category": "Cheat Sheet"
+        "category": "Simple Cheat Sheet"
       },
       {
-        "command": "vscode-cheatsheet.closeCheatSheet",
+        "command": "simple-cheatsheet.closeCheatSheet",
         "title": "close",
-        "category": "Cheat Sheet"
+        "category": "Simple Cheat Sheet"
       },
       {
-        "command": "vscode-cheatsheet.toggleCheatSheet",
+        "command": "simple-cheatsheet.toggleCheatSheet",
         "title": "toggle",
-        "category": "Cheat Sheet"
+        "category": "Simple Cheat Sheet"
       }
     ],
     "configuration": {
-      "title": "vscode-cheatsheet",
+      "title": "simple-cheatsheet",
       "properties": {
-        "vscode-cheatsheet.cheatSheetFile": {
+        "simple-cheatsheet.cheatSheetFile": {
           "type": [
             "string",
             "null"
@@ -65,7 +65,7 @@
     },
     "keybindings": [
       {
-        "command": "vscode-cheatsheet.toggleCheatSheet",
+        "command": "simple-cheatsheet.toggleCheatSheet",
         "key": "ctrl+f1",
         "mac": "cmd+f1"
       }
