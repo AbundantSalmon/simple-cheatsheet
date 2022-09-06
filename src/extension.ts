@@ -20,12 +20,11 @@ export function activate(context: vscode.ExtensionContext) {
         "vscodeCheatSheet",
         "VSCode Cheat Sheet",
         vscode.ViewColumn.One,
-        {
-        }
+        {}
       );
 
       let cheatSheetFilePath =
-        vscode.workspace.getConfiguration("vscode-cheatsheet").cheatSheetFile;
+        vscode.workspace.getConfiguration("simple-cheatsheet").cheatSheetFile;
 
       if (!cheatSheetFilePath) {
         cheatSheetFilePath = path.join(context.extensionPath, "example.html");
@@ -52,7 +51,7 @@ export function activate(context: vscode.ExtensionContext) {
   };
 
   const showCheatSheetCommand = vscode.commands.registerCommand(
-    "vscode-cheatsheet.showCheatSheet",
+    "simple-cheatsheet.showCheatSheet",
     showCheatSheet
   );
 
@@ -66,12 +65,12 @@ export function activate(context: vscode.ExtensionContext) {
   };
 
   const closeCheatSheetCommand = vscode.commands.registerCommand(
-    "vscode-cheatsheet.closeCheatSheet",
+    "simple-cheatsheet.closeCheatSheet",
     closeCheatSheet
   );
 
   const toggleCheatSheetCommand = vscode.commands.registerCommand(
-    "vscode-cheatsheet.toggleCheatSheet",
+    "simple-cheatsheet.toggleCheatSheet",
     () => {
       if (currentPanel) {
         closeCheatSheet();

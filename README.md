@@ -17,6 +17,10 @@ This extension contributes the following settings:
 
 ## Release Notes
 
+### 0.0.2
+
+Fix broken deployment.
+
 ### 0.0.1
 
-Initial release of simple-cheatsheet
+Initial release of simple-cheatsheet.
