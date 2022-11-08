@@ -1,5 +1,7 @@
 # simple-cheatsheet README
 
+![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/AbundantSalmon.simple-cheatsheet)
+
 ## Features
 
 Basic peaking functionality for a html cheat sheet for VSCode. Default
